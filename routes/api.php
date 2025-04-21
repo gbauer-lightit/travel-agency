@@ -30,10 +30,11 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 |--------------------------------------------------------------------------
 */
 Route::prefix('users')
+    ->name('users.')
     ->middleware([])
     ->group(static function (): void {
-        Route::get('/', ListUserController::class);
-        Route::get('/{user}', GetUserController::class)->withTrashed()->whereNumber('user');
-        Route::post('/', StoreUserController::class);
-        Route::delete('/{user}', DeleteUserController::class)->whereNumber('user');
+        Route::get('/', ListUserController::class)->name('list');
+        Route::get('/{user}', GetUserController::class)->withTrashed()->whereNumber('user')->name('get');
+        Route::post('/', StoreUserController::class)->name('store');
+        Route::delete('/{user}', DeleteUserController::class)->whereNumber('user')->name('delete');
     });
