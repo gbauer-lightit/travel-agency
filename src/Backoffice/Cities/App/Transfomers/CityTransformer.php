@@ -1,6 +1,6 @@
 <?php
 
-declare(Strict_types=1);
+declare(strict_types=1);
 
 namespace Lightit\Backoffice\Cities\App\Transfomers;
 
@@ -8,5 +8,4 @@ use Flugg\Responder\Transformers\Transformer;
 
 final class CityTransformer extends Transformer
 {
-
 }

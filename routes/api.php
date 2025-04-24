@@ -7,6 +7,9 @@ use Illuminate\Support\Facades\Route;
 use Lightit\Backoffice\Users\App\Controllers\{
     DeleteUserController, GetUserController, ListUserController, StoreUserController
 };
+use Lightit\Backoffice\Airlines\App\Controllers\ListAirlineController;
+use Lightit\Backoffice\Airlines\App\Controllers\StoreAirlineController;
+use Lightit\Backoffice\Cities\App\Controllers\StoreCityController;
 
 
 /*
@@ -37,4 +40,18 @@ Route::prefix('users')
         Route::get('/{user}', GetUserController::class)->withTrashed()->whereNumber('user')->name('get');
         Route::post('/', StoreUserController::class)->name('store');
         Route::delete('/{user}', DeleteUserController::class)->whereNumber('user')->name('delete');
+    });
+
+Route::prefix('cities')
+    ->name('cities.')
+    ->middleware([])
+    ->group(static function (): void {
+        Route::post('/', StoreCityController::class)->name('store');
+    });
+
+Route::prefix('airlines')
+    ->name('airlines.')
+    ->middleware([])
+    ->group(static function (): void {
+        Route::post('/', StoreAirlineController::class)->name('store');
     });
