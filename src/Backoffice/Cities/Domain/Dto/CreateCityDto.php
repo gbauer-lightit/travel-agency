@@ -10,7 +10,6 @@ final readonly class CreateCityDto
         public string $name,
         public string $country,
         public string $code,
-    )
-    {
+    ) {
     }
 }
