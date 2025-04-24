@@ -18,7 +18,5 @@ final class StoreCityController extends Controller
         return responder()
             ->success($city)
             ->respond(201);
-
     }
-
 }

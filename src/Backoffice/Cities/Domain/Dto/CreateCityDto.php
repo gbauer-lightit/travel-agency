@@ -9,7 +9,7 @@ final readonly class CreateCityDto
     public function __construct(
         public string $name,
         public string $country,
-        public string $code
+        public string $code,
     )
     {
     }

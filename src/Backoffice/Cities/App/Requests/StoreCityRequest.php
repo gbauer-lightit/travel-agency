@@ -1,6 +1,6 @@
 <?php
 
-declare(Strict_types=1);
+declare(strict_types=1);
 
 namespace Lightit\Backoffice\Cities\App\Requests;
 
@@ -10,7 +10,9 @@ use Lightit\Backoffice\Cities\Domain\Dto\CreateCityDto;
 final class StoreCityRequest extends FormRequest
 {
     public const NAME = 'name';
+
     public const COUNTRY = 'country';
+
     public const CODE = 'code';
 
     public function rules(): array
@@ -30,5 +32,4 @@ final class StoreCityRequest extends FormRequest
             code: $this->string(self::CODE)->toString(),
         );
     }
-
 }
