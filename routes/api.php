@@ -10,6 +10,7 @@ use Lightit\Backoffice\Users\App\Controllers\{
 use Lightit\Backoffice\Airlines\App\Controllers\ListAirlineController;
 use Lightit\Backoffice\Airlines\App\Controllers\StoreAirlineController;
 use Lightit\Backoffice\Cities\App\Controllers\StoreCityController;
+use Lightit\Backoffice\Flights\App\Controllers\GetFlightByCityController;
 use Lightit\Backoffice\Flights\App\Controllers\StoreFlightController;
 
 
@@ -48,6 +49,10 @@ Route::prefix('cities')
     ->middleware([])
     ->group(static function (): void {
         Route::post('/', StoreCityController::class)->name('store');
+        //TODO: check if this route+controller are right (route from city and controller from flight)
+        Route::get('/{cityId}/flights', GetFlightByCityController::class)
+            ->whereNumber('city')
+            ->name('get.flights');
     });
 
 Route::prefix('airlines')
