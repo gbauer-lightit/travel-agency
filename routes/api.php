@@ -10,6 +10,7 @@ use Lightit\Backoffice\Users\App\Controllers\{
 use Lightit\Backoffice\Airlines\App\Controllers\ListAirlineController;
 use Lightit\Backoffice\Airlines\App\Controllers\StoreAirlineController;
 use Lightit\Backoffice\Cities\App\Controllers\StoreCityController;
+use Lightit\Backoffice\Flights\App\Controllers\StoreFlightController;
 
 
 /*
@@ -54,4 +55,11 @@ Route::prefix('airlines')
     ->middleware([])
     ->group(static function (): void {
         Route::post('/', StoreAirlineController::class)->name('store');
+    });
+
+Route::prefix('flights')
+    ->name('flights.')
+    ->middleware([])
+    ->group(static function (): void {
+        Route::post('/', StoreFlightController::class)->name('store');
     });
