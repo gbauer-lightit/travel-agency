@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Route;
 use Lightit\Backoffice\Users\App\Controllers\{
     DeleteUserController, GetUserController, ListUserController, StoreUserController
 };
+use Lightit\Backoffice\Airlines\App\Controllers\DeleteAirlineController;
 use Lightit\Backoffice\Airlines\App\Controllers\ListAirlineController;
 use Lightit\Backoffice\Airlines\App\Controllers\StoreAirlineController;
 use Lightit\Backoffice\Cities\App\Controllers\DeleteCityController;
@@ -60,6 +61,9 @@ Route::prefix('airlines')
     ->group(static function (): void {
         Route::post('/', StoreAirlineController::class)->name('store');
         Route::get('/', ListAirlineController::class)->name('list');
+        Route::delete('{airlineId}', DeleteAirlineController::class)
+            ->whereNumber('airlineId')
+            ->name('delete');
     });
 
 Route::prefix('flights')

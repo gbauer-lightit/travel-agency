@@ -10,7 +10,7 @@ use Lightit\Backoffice\Airlines\Domain\Models\Airline;
 final class ListAirlineAction
 {
     /** @return Collection<int, Airline> */
-    public function __invoke(): Collection
+    public function execute(): Collection
     {
         return Airline::query()->get();
     }

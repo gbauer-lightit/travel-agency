@@ -10,7 +10,7 @@ use Lightit\Backoffice\Flights\Domain\Models\Flight;
 final class GetFlightsByCityAction
 {
     /** @return Collection<int, Flight> */
-    public function __invoke(int $cityId): Collection
+    public function execute(int $cityId): Collection
     {
         return Flight::query()
             ->where('departure_city_id', $cityId)

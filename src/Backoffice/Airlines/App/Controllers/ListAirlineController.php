@@ -12,7 +12,7 @@ final class ListAirlineController extends Controller
 {
     public function __invoke(ListAirlineAction $action): JsonResponse
     {
-        $airlines = $action();
+        $airlines = $action->execute();
 
         return responder()
             ->success($airlines)

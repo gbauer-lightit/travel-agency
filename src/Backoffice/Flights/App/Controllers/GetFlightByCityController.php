@@ -12,7 +12,7 @@ final class GetFlightByCityController extends Controller
 {
     public function __invoke(int $cityId, GetFlightsByCityAction $action): JsonResponse
     {
-        $flights = $action($cityId);
+        $flights = $action->execute($cityId);
 
         return responder()
             ->success($flights)
