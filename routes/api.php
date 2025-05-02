@@ -62,6 +62,7 @@ Route::prefix('airlines')
     ->middleware([])
     ->group(static function (): void {
         Route::post('/', StoreAirlineController::class)->name('store');
+        Route::get('/', ListAirlineController::class)->name('list');
     });
 
 Route::prefix('flights')

@@ -4,6 +4,18 @@ declare(strict_types=1);
 
 namespace Lightit\Backoffice\Airlines\App\Controllers;
 
-final class ListAirlineController
+use Illuminate\Http\JsonResponse;
+use Illuminate\Routing\Controller;
+use Lightit\Backoffice\Airlines\Domain\Actions\ListAirlineAction;
+
+final class ListAirlineController extends Controller
 {
+    public function __invoke(ListAirlineAction $action): JsonResponse
+    {
+        $airlines = $action();
+
+        return responder()
+            ->success($airlines)
+            ->respond(201);
+    }
 }
