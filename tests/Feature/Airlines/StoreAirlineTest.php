@@ -1,4 +1,5 @@
 <?php
+
 declare(Strict_types=1);
 
 use Tests\RequestFactories\StoreAirlineRequestFactory;
@@ -6,22 +7,22 @@ use function Pest\Laravel\assertDatabaseEmpty;
 use function Pest\Laravel\assertDatabaseHas;
 use function Pest\Laravel\postJson;
 
-describe('Testing store airline', function () {
-    it('stores a new airline', function () {
+describe('Testing store airline', function (): void {
+    it('stores a new airline', function (): void {
         $request = StoreAirlineRequestFactory::new()->create();
 
         postJson('/api/airlines', $request)->assertCreated()->assertJsonStructure([
             'status',
             'success',
             'data' => [
-                'id', 'name', 'description', 'created_at', 'updated_at'
-            ]
+                'id', 'name', 'description', 'created_at', 'updated_at',
+            ],
         ]);
 
         assertDatabaseHas('airlines', $request);
     });
 
-    it('Bad request storing airline', function () {
+    it('Bad request storing airline', function (): void {
         $request = ['name' => 123, 'description' => 'Test Test'];
 
         postJson('/api/airlines', $request)->assertUnprocessable();
@@ -29,7 +30,7 @@ describe('Testing store airline', function () {
         assertDatabaseEmpty('airlines');
     });
 
-    it('Empty request storing airline', function () {
+    it('Empty request storing airline', function (): void {
         $request = [];
 
         postJson('/api/airlines', $request)->assertUnprocessable()->assertJsonStructure([
@@ -37,9 +38,9 @@ describe('Testing store airline', function () {
                 'code',
                 'message',
                 'fields' => [
-                    'name', 'description'
-                ]
-            ]
+                    'name', 'description',
+                ],
+            ],
         ]);
 
         assertDatabaseEmpty('airlines');
