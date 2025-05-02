@@ -25,7 +25,7 @@ final class StoreFlightRequest extends FormRequest
     public function rules(): array
     {
         return [
-            self::AIRLINE_ID => 'required|integer|exists:airlines,id',
+            self::AIRLINE_ID => ['required', 'integer', 'exists:airlines,id'], //TO-DO: change all rules to this format
             self::FLIGHT_NUMBER => 'required|string|max:255',
             self::DEPARTURE_CITY_ID => 'required|integer|exists:cities,id',
             self::ARRIVAL_CITY_ID => 'required|integer|exists:cities,id',
