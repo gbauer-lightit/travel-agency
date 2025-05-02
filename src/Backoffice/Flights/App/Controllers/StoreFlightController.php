@@ -19,5 +19,4 @@ final class StoreFlightController extends Controller
             ->success($flight)
             ->respond(201);
     }
-
 }

@@ -8,5 +8,4 @@ use Flugg\Responder\Transformers\Transformer;
 
 final class FlightTransformer extends Transformer
 {
-
 }

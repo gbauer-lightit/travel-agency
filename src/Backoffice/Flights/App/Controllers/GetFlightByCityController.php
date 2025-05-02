@@ -8,7 +8,6 @@ use Illuminate\Http\JsonResponse;
 use Illuminate\Routing\Controller;
 use Lightit\Backoffice\Flights\Domain\Actions\GetFlightsByCityAction;
 
-
 final class GetFlightByCityController extends Controller
 {
     public function __invoke(int $cityId, GetFlightsByCityAction $action): JsonResponse

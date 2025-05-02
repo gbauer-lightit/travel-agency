@@ -11,10 +11,15 @@ use Lightit\Backoffice\Flights\Domain\Dto\CreateFlightDto;
 final class StoreFlightRequest extends FormRequest
 {
     public const AIRLINE_ID = 'airline_id';
+
     public const FLIGHT_NUMBER = 'flight_number';
+
     public const DEPARTURE_CITY_ID = 'departure_city_id';
+
     public const ARRIVAL_CITY_ID = 'arrival_city_id';
+
     public const DEPARTURE_DATE = 'departure_date';
+
     public const ARRIVAL_DATE = 'arrival_date';
 
     public function rules(): array

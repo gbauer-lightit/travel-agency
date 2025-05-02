@@ -4,7 +4,6 @@ declare(Strict_types=1);
 
 namespace Lightit\Backoffice\Flights\Domain\Actions;
 
-
 use Lightit\Backoffice\Flights\Domain\Dto\CreateFlightDto;
 use Lightit\Backoffice\Flights\Domain\Models\Flight;
 
@@ -21,5 +20,4 @@ final class StoreFlightAction
             'arrival_date' => $createFlightDto->arrivalDate,
         ]);
     }
-
 }
