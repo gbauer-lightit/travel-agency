@@ -10,7 +10,9 @@ use Lightit\Backoffice\Cities\Domain\Dto\EditCityDto;
 final class EditCityRequest extends FormRequest
 {
     public const NAME = 'name';
+
     public const COUNTRY = 'country';
+
     public const CODE = 'code';
 
     public function rules(): array
@@ -30,5 +32,4 @@ final class EditCityRequest extends FormRequest
             code: $this->string(self::CODE)->toString(),
         );
     }
-
 }

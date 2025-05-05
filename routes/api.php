@@ -12,6 +12,7 @@ use Lightit\Backoffice\Airlines\App\Controllers\ListAirlineController;
 use Lightit\Backoffice\Airlines\App\Controllers\StoreAirlineController;
 use Lightit\Backoffice\Cities\App\Controllers\DeleteCityController;
 use Lightit\Backoffice\Cities\App\Controllers\EditCityController;
+use Lightit\Backoffice\Cities\App\Controllers\ListCitiesController;
 use Lightit\Backoffice\Cities\App\Controllers\StoreCityController;
 use Lightit\Backoffice\Flights\App\Controllers\GetFlightByCityController;
 use Lightit\Backoffice\Flights\App\Controllers\StoreFlightController;
@@ -49,6 +50,7 @@ Route::prefix('users')
 Route::prefix('cities')
     ->name('cities.')
     ->group(static function (): void {
+        Route::get('/', ListCitiesController::class)->name('list');
         Route::post('/', StoreCityController::class)->name('store');
         Route::delete('/{cityId}', DeleteCityController::class)->whereNumber('cityId')->name('delete');
         Route::get('/{cityId}/flights', GetFlightByCityController::class)

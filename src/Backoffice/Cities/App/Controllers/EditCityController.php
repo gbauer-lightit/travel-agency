@@ -19,5 +19,4 @@ final class EditCityController extends Controller
             ->success($city)
             ->respond(201);
     }
-
 }

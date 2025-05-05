@@ -10,7 +10,6 @@ final readonly class EditCityDto
         public string|null $name = null,
         public string|null $country = null,
         public string|null $code = null,
-    )
-    {
+    ) {
     }
 }
