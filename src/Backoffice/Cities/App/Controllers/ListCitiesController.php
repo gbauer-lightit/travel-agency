@@ -14,8 +14,8 @@ final class ListCitiesController extends Controller
 {
     public function __invoke(Request $request, ListCitiesAction $action): JsonResponse
     {
-        $perPage = (int)$request->query('per_page', '10');
-        $page = (int)$request->query('page', '1');
+        $perPage = (int) $request->query('per_page', '10');
+        $page = (int) $request->query('page', '1');
 
         $cities = $action->execute($perPage, $page);
 

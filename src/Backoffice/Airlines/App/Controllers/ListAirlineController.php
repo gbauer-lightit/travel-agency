@@ -14,8 +14,8 @@ final class ListAirlineController extends Controller
 {
     public function __invoke(Request $request, ListAirlineAction $action): JsonResponse
     {
-        $perPage = (int)$request->query('per_page', '10');
-        $page = (int)$request->query('page', '1');
+        $perPage = (int) $request->query('per_page', '10');
+        $page = (int) $request->query('page', '1');
 
         $airlines = $action->execute($perPage, $page);
 

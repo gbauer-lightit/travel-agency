@@ -14,5 +14,4 @@ final class ListFlightsAction
     {
         return Flight::query()->paginate($perPage, ['*'], 'page', $page);
     }
-
 }
