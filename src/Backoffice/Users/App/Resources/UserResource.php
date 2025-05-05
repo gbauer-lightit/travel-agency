@@ -14,7 +14,7 @@ use Lightit\Backoffice\Users\Domain\Models\User;
 class UserResource extends JsonResource
 {
     /**
-     * @return array{id: int, name: string, email_address: string}
+     * @return array{id: int, name: string, email_address: mixed}
      */
     public function toArray(Request $request): array
     {
