@@ -8,6 +8,7 @@ use Illuminate\Http\JsonResponse;
 use Illuminate\Routing\Controller;
 use Lightit\Backoffice\Cities\App\Requests\EditCityRequest;
 use Lightit\Backoffice\Cities\Domain\Actions\EditCityAction;
+use Symfony\Component\HttpFoundation\Response;
 
 final class EditCityController extends Controller
 {
@@ -17,6 +18,6 @@ final class EditCityController extends Controller
 
         return responder()
             ->success($city)
-            ->respond(201);
+            ->respond(Response::HTTP_OK);
     }
 }

@@ -7,6 +7,7 @@ namespace Lightit\Backoffice\Airlines\App\Controllers;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Routing\Controller;
 use Lightit\Backoffice\Airlines\Domain\Actions\DeleteAirlineAction;
+use Symfony\Component\HttpFoundation\Response;
 
 final class DeleteAirlineController extends Controller
 {
@@ -15,7 +16,7 @@ final class DeleteAirlineController extends Controller
         $action->execute($airlineId);
 
         return responder()
-            ->success(['message' => 'Airline deleted successfully'])
-            ->respond(200);
+            ->success()
+            ->respond(Response::HTTP_OK);
     }
 }

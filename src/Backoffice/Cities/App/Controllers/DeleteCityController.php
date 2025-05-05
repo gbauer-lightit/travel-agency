@@ -7,6 +7,7 @@ namespace Lightit\Backoffice\Cities\App\Controllers;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Routing\Controller;
 use Lightit\Backoffice\Cities\Domain\Actions\DeleteCityAction;
+use Symfony\Component\HttpFoundation\Response;
 
 final class DeleteCityController extends Controller
 {
@@ -15,7 +16,7 @@ final class DeleteCityController extends Controller
         $action->execute($cityId);
 
         return responder()
-            ->success(['message' => 'City deleted successfully'])
-            ->respond(200);
+            ->success()
+            ->respond(Response::HTTP_OK);
     }
 }

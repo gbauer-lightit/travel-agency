@@ -8,6 +8,7 @@ use Illuminate\Http\JsonResponse;
 use Illuminate\Routing\Controller;
 use Lightit\Backoffice\Flights\App\Requests\StoreFlightRequest;
 use Lightit\Backoffice\Flights\Domain\Actions\StoreFlightAction;
+use Symfony\Component\HttpFoundation\Response;
 
 final class StoreFlightController extends Controller
 {
@@ -17,6 +18,6 @@ final class StoreFlightController extends Controller
 
         return responder()
             ->success($flight)
-            ->respond(201);
+            ->respond(Response::HTTP_CREATED);
     }
 }

@@ -15,6 +15,7 @@ use Lightit\Backoffice\Cities\App\Controllers\EditCityController;
 use Lightit\Backoffice\Cities\App\Controllers\ListCitiesController;
 use Lightit\Backoffice\Cities\App\Controllers\StoreCityController;
 use Lightit\Backoffice\Flights\App\Controllers\GetFlightByCityController;
+use Lightit\Backoffice\Flights\App\Controllers\ListFlightsController;
 use Lightit\Backoffice\Flights\App\Controllers\StoreFlightController;
 
 
@@ -72,5 +73,6 @@ Route::prefix('airlines')
 Route::prefix('flights')
     ->name('flights.')
     ->group(static function (): void {
+        Route::get('/', ListFlightsController::class)->name('list');
         Route::post('/', StoreFlightController::class)->name('store');
     });

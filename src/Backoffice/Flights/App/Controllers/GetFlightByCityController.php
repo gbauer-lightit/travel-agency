@@ -7,6 +7,7 @@ namespace Lightit\Backoffice\Flights\App\Controllers;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Routing\Controller;
 use Lightit\Backoffice\Flights\Domain\Actions\GetFlightsByCityAction;
+use Symfony\Component\HttpFoundation\Response;
 
 final class GetFlightByCityController extends Controller
 {
@@ -16,6 +17,6 @@ final class GetFlightByCityController extends Controller
 
         return responder()
             ->success($flights)
-            ->respond(200);
+            ->respond(Response::HTTP_OK);
     }
 }

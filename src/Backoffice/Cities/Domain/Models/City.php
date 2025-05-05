@@ -11,10 +11,10 @@ use Lightit\Backoffice\Airlines\Domain\Models\Airline;
 use Lightit\Backoffice\Flights\Domain\Models\Flight;
 
 /**
- * @property int $id
- * @property string $name
- * @property string $country
- * @property string $code
+ * @property int                          $id
+ * @property string                       $name
+ * @property string                       $country
+ * @property string                       $code
  * @property \Carbon\CarbonImmutable|null $created_at
  * @property \Carbon\CarbonImmutable|null $updated_at
  * @property-read \Illuminate\Database\Eloquent\Collection<int, Airline> $airlines

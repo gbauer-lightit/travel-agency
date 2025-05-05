@@ -8,6 +8,7 @@ use Illuminate\Http\JsonResponse;
 use Illuminate\Routing\Controller;
 use Lightit\Backoffice\Cities\App\Requests\StoreCityRequest;
 use Lightit\Backoffice\Cities\Domain\Actions\StoreCityAction;
+use Symfony\Component\HttpFoundation\Response;
 
 final class StoreCityController extends Controller
 {
@@ -17,6 +18,6 @@ final class StoreCityController extends Controller
 
         return responder()
             ->success($city)
-            ->respond(201);
+            ->respond(Response::HTTP_CREATED);
     }
 }
