@@ -18,5 +18,4 @@ final class DeleteAirlineController extends Controller
             ->success(['message' => 'Airline deleted successfully'])
             ->respond(200);
     }
-
 }
